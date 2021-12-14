@@ -7,35 +7,35 @@ import org.springframework.stereotype.Component;
 @Component
 public class EstacionDTOConverter {
 
-    public GetEstacionDTO estacionToEstacionDTO(Estacion e){
-        return GetEstacionDTO.builder()
-                .nombre(e.getNombre())
-                .marca(e.getMarca())
-                .ubicacion(e.getUbicacion())
-                .tieneAutolavado(e.isTieneAutolavado())
-                .precioGasoilNormal(e.getPrecioGasoilNormal())
-                .precioGasolina95Octanos(e.getPrecioGasolina95Octanos())
-                .precioGasoilEspecial(e.getPrecioGasoilEspecial())
-                .precioGasolina98(e.getPrecioGasolina98())
-                .descripcion(e.getDescripcion())
-                .fechaApertura(e.getFechaApertura())
+    public Estacion createEstacionDtoToEstacion(CreateEstacionDTO dto){
+        return Estacion.builder()
+                .id(dto.getId())
+                .nombre(dto.getNombre())
+                .marca(dto.getMarca())
+                .ubicacion(dto.getUbicacion())
+                .tieneAutolavado(dto.isTieneAutolavado())
+                .precioGasoilNormal(dto.getPrecioGasoilNormal())
+                .precioGasoilEspecial(dto.getPrecioGasoilEspecial())
+                .precioGasolina98(dto.getPrecioGasolina98())
+                .precioGasolina95Octanos(dto.getPrecioGasolina95Octanos())
+                .fechaApertura(dto.getFechaApertura())
+                .descripcion(dto.getServicios())
                 .build();
     }
-
-    public Estacion estacionDTOToEstacion(CreateEstacionDTO c){
-        return new Estacion(
-                c.getNombre(),
-                c.getMarca(),
-                c.getUbicacion(),
-                c.isTieneAutolavado(),
-                c.getPrecioGasoilNormal(),
-                c.getPrecioGasolina95Octanos(),
-                c.getPrecioGasoilEspecial(),
-                c.getPrecioGasolina98(),
-                c.getDescripcion(),
-                c.getFechaApertura()
-        );
-
+    public GetEstacionDTO EstacionToGetEstacionDto(Estacion estacionDeServicio){
+        return GetEstacionDTO.builder()
+                .id(estacionDeServicio.getId())
+                .nombre(estacionDeServicio.getNombre())
+                .marca(estacionDeServicio.getMarca())
+                .ubicacion(estacionDeServicio.getUbicacion())
+                .tieneAutolavado(estacionDeServicio.isTieneAutolavado())
+                .precioGasoilNormal(estacionDeServicio.getPrecioGasoilNormal())
+                .precioGasoilEspecial(estacionDeServicio.getPrecioGasoilEspecial())
+                .precioGasolina98(estacionDeServicio.getPrecioGasolina98())
+                .precioGasolina95Octanos(estacionDeServicio.getPrecioGasolina95Octanos())
+                .fechaApertura(estacionDeServicio.getFechaApertura())
+                .servicios(estacionDeServicio.getDescripcion())
+                .build();
     }
 
 }

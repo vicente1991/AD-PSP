@@ -5,6 +5,8 @@ import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.validation.constraints.Past;
 import java.time.LocalDateTime;
 
 @Entity
@@ -21,14 +23,17 @@ public class Estacion {
     private String nombre;
     private String marca;
     private String ubicacion;
-    private boolean tieneAutolavado;
+    private boolean tieneAutolavado=false;
     private float precioGasoilNormal;
     private float precioGasolina95Octanos;
     private float precioGasoilEspecial;
     private float precioGasolina98;
+
+    @Lob
     private String descripcion;
+
+    @Past
     private LocalDateTime fechaApertura;
 
-    public Estacion(String nombre, String marca, String ubicacion, boolean tieneAutolavado, float precioGasoilNormal, float precioGasolina95Octanos, float precioGasoilEspecial, float precioGasolina98, String descripcion, LocalDateTime fechaApertura) {
-    }
+
 }
