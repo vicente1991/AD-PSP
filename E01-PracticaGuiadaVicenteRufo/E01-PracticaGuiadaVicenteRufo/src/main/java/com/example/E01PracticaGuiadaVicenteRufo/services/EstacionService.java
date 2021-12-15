@@ -45,4 +45,7 @@ public class EstacionService {
             estacionRepository.deleteById(id);
         }
     }
+
+
+    public Estacion edit(Estacion estacion){ return estacionRepository.save(estacion);}
 }

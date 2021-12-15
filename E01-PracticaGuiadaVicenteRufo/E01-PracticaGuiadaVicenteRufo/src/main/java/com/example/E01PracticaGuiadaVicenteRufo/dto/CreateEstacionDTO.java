@@ -1,6 +1,6 @@
 package com.example.E01PracticaGuiadaVicenteRufo.dto;
 
-import com.example.E01PracticaGuiadaVicenteRufo.validacion.multiple.anotacion.FieldsValueMatch;
+import com.example.E01PracticaGuiadaVicenteRufo.validacion.anotaciones.Ubicacion;
 import lombok.*;
 
 import javax.persistence.Lob;
@@ -11,14 +11,6 @@ import java.time.LocalDateTime;
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@FieldsValueMatch.List({
-        @FieldsValueMatch(
-                field = "location",
-                fieldMatch = "verifyLocation",
-                message = "Las ubicaciones coinciden y no puede ser por los clavos de cristo"
-        )
-})
-
 
 
 public class CreateEstacionDTO {
@@ -32,9 +24,10 @@ public class CreateEstacionDTO {
     private String marca;
 
     @NotBlank(message = "{estaciondeservicio.ubicacion.blank}")
+    @Ubicacion
+    @Pattern(regexp ="^([-+]?\\d{1,2}[.]\\d+),\\s*([-+]?\\d{1,3}[.]\\d+)$",message = "Cambia al formato correcto")
     private String ubicacion;
 
-    private String verifyUbicacion;
 
     private boolean tieneAutolavado = false;
 
@@ -56,6 +49,6 @@ public class CreateEstacionDTO {
     @Past
     private LocalDateTime fechaApertura;
 
-    private LocalDateTime fechaRegistro;
+    private LocalDateTime fechaRegistro = LocalDateTime.now();
 
 }

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -45,4 +46,23 @@ public class EstacionController {
         return ResponseEntity.noContent().build();
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Optional<GetEstacionDTO>> edit(@PathVariable Long id, @Valid @RequestBody CreateEstacionDTO estacionDeServicio) {
+        return ResponseEntity.ok().body(estacionService.findById(id).map(e ->
+        {e.setId(id);
+            e.setMarca(estacionDeServicio.getMarca());
+            e.setNombre(estacionDeServicio.getNombre());
+            e.setUbicacion(estacionDeServicio.getUbicacion());
+            e.setTieneAutolavado(estacionDeServicio.isTieneAutolavado());
+            e.setPrecioGasoilNormal(estacionDeServicio.getPrecioGasoilNormal());
+            e.setPrecioGasoilEspecial(estacionDeServicio.getPrecioGasoilEspecial());
+            e.setPrecioGasolina98(estacionDeServicio.getPrecioGasolina98());
+            e.setPrecioGasolina95Octanos(estacionDeServicio.getPrecioGasolina95Octanos());
+            e.setDescripcion(estacionDeServicio.getServicios());
+            e.setFechaApertura(estacionDeServicio.getFechaApertura());
+            estacionService.save(e);
+            GetEstacionDTO g = estacionDTOConverter.EstacionToGetEstacionDto(e);
+            return g;
+        }));
+    }
 }
