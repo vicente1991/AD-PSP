@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "e6df80a8-97e8-48e9-9032-54975377b65f",
+		"name": "Estaciones",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Todas las estaciones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/estacion/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estacion",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Añadir Estacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Gasolinera Luismi\",\r\n    \"marca\":\"Magaña\",\r\n    \"ubicacion\":\"37.39034409566091,-5.998690906051934\",\r\n    \"tieneAutolavado\": true,\r\n    \"precioGasoilNormal\": 7.8,\r\n    \"precioGasolina95Octanos\": 7.87,\r\n    \"precioGasoilEspecial\": 7.89,\r\n    \"precioGasolina98\": 7.9,\r\n    \"servicios\": \"Refrescos\",\r\n    \"fechaApertura\": \"1991-02-26T10:07:30\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/estacion/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estacion",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Añadir Estacion Erronea",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Gasolinera Menorca\",\r\n    \"marca\":\"Cepsa\",\r\n    \"ubicacion\":\"37.39034409566091,-5.998690906051934\",\r\n    \"tieneAutolavado\": true,\r\n    \"precioGasoilNormal\": 12.1,\r\n    \"precioGasolina95Octanos\": 12.1,\r\n    \"precioGasoilEspecial\": 12.1,\r\n    \"precioGasolina98\": 12.1,\r\n    \"servicios\": \"CAFE\",\r\n    \"fechaApertura\": \"2012-12-12T10:12:20\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/estacion/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estacion",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar una estacion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/estacion/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estacion",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar una estacion erronea",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/estacion/4234",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estacion",
+						"4234"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar una estacion",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/estacion/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estacion",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar una estacion erronea",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/estacion/999",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estacion",
+						"999"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar estacion",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Gasolinera Luismi\",\r\n    \"marca\":\"Dios\",\r\n    \"ubicacion\":\"47.39034491,-10.99869094\",\r\n    \"tieneAutolavado\": false,\r\n    \"precioGasoilNormal\": 12.0,\r\n    \"precioGasolina95Octanos\": 12.0,\r\n    \"precioGasoilEspecial\": 12.0,\r\n    \"precioGasolina98\": 12.0,\r\n    \"servicios\": \"Jamon\",\r\n    \"fechaApertura\": \"2021-12-01T10:08:00\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/estacion/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estacion",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar estacion erronea",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"\",\r\n    \"marca\":\"\",\r\n    \"ubicacion\":\"47.3903440956,-10.998690906051\",\r\n    \"tieneAutolavado\": true,\r\n    \"precioGasoilNormal\": 12.0,\r\n    \"precioGasolina95Octanos\": -1.0,\r\n    \"precioGasoilEspecial\": 120.0,\r\n    \"precioGasolina98\": 10.99,\r\n    \"servicios\": \"Chorizo\",\r\n    \"fechaApertura\": \"2023-12-12T12:50:59\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/estacion/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estacion",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
