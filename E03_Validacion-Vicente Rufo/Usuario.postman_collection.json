@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "b682515d-921b-4bfe-902e-108127899ada",
+		"name": "Usuario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Añadir nuevo usuario correctamente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"lmlopez\",\r\n    \"email\": \"lmlopez-salesianos@hotmail.com\",\r\n    \"verifyEmail\":\"lmlopez-salesianos@hotmail.com\",\r\n    \"password\": \"Uwu-123456\",\r\n    \"verifyPassword\": \"Uwu-123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/usuario/v2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"v2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Añadir nuevo usuario malamente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"lmlopez\",\r\n    \"email\": \"lmlopez-salesianos@hotmail.com\",\r\n    \"verifyEmail\":\"lmlopez-salesianos@hotmail.com\",\r\n    \"password\": \"Uwu123456\",\r\n    \"verifyPassword\": \"Uwu-123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/usuario/v2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"v2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
