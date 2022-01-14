@@ -53,7 +53,7 @@ private boolean hasOthers;
             }
         }
         if(hasOthers){
-            if(!(clave.contains(".") || clave.contains(",") || clave.contains("$")
+            if(!(clave.contains(".") || clave.contains(",") || clave.contains("$") ||clave.contains("@")
                     || clave.contains("-") || clave.contains("_"))){
                 return false;
             }
