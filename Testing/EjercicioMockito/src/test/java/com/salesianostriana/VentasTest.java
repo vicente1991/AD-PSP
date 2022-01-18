@@ -20,12 +20,12 @@ public class VentasTest {
     VentaRepositorio ventaRepositorio;
 
     @Mock
-    ClienteRepositorio clienteRepositorio;
-
-    @Mock
     ProductoRepositorio productoRepositorio;
 
 
-    public void
+    //codigo null
+    public void productoConCodigoNull(){
+        
+    }
 
 }
